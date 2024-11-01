@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./LandingPage.module.css";
 import { Typewriter } from "react-simple-typewriter";
 import { FaDownload, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 function LandingPage() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+ 
   return (
     <div className={styles.main_container}>
       <div className={styles.name_container}>
@@ -30,19 +38,21 @@ function LandingPage() {
 
       <div className={styles.download_container}>
         <button className={`${styles.download_cv} ${styles.type}`}>
-          <span className={styles.dowload}>Download CV <FaDownload /></span>
+          <span className={styles.dowload}>
+            Download CV <FaDownload />
+          </span>
         </button>
       </div>
 
       <div className={styles.social_container}>
         <span className={styles.social}>
-          <FaGithub size={30} />
+          <FaGithub size={width < 600 ? 20 : 30} />
         </span>
         <span className={styles.social}>
-          <FaLinkedin size={30} />
+          <FaLinkedin size={width < 600 ? 20 : 30} />
         </span>
         <span className={styles.social}>
-          <FaInstagram size={30} />
+          <FaInstagram size={width < 600 ? 20 : 30} />
         </span>
       </div>
     </div>
