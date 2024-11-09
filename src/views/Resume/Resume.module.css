@@ -1,0 +1,114 @@
+.main_container {
+    margin-top: 34px;
+}
+.resume_title_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.feel_free_text {
+  font-size: 14px;
+  opacity: 50%;
+}
+
+.resume {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.underline_container {
+  display: flex;
+  gap: 4px;
+}
+
+.underline_one::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 4px;
+  background-color: #00ff9b;
+  border-radius: 4px;
+}
+
+.underline_two::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #00ff9b;
+  border-radius: 8px;
+}
+
+.underline_three::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #00ff9b;
+  border-radius: 4px;
+}
+.resume_container {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.education_container {
+  width: 50%;
+}
+
+.edu_title {
+  margin: 24px 0px 24px 0px;
+}
+.education_title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.educations {
+  display: flex;
+  gap: 12px;
+  border-left: 2px solid #00ff9b;
+  padding: 12px;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.education_content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exp_container {
+  width: 50%;
+}
+
+.exp_title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.subtitle {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .resume_container {
+    flex-direction: column;
+  }
+  .education_container {
+    width: 100%;
+  }
+  .exp_container {
+    width: 100%;
+  }
+}
