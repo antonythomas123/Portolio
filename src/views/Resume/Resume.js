@@ -96,7 +96,7 @@ function Resume() {
 
       <div className={styles.skill_sections}>
         <div>
-          <span className={styles.education_title}>My skills</span>
+          <span className={styles.education_title}>Skills</span>
         </div>
       </div>
     </div>

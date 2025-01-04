@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styles from "./ContactMe.module.css";
 import {
   FaEnvelope,
@@ -7,8 +7,61 @@ import {
   FaPaperPlane,
   FaUser,
 } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
+import { useToast } from "../../providers/ToastProvider";
 
 function ContactMe() {
+  const form = useRef();
+
+  const toast = useToast();
+
+  const [message, setMessage] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setMessage((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          toast.showToast("Message sent successfully!", "success");
+          setMessage({
+            name: "",
+            email: "",
+            subject: "",
+            description: "",
+          });
+        },
+        (error) => {
+          toast.showToast(
+            "Unable to sent message now. Please try again later!",
+            "error"
+          );
+        }
+      );
+  };
+
   return (
     <div style={{ marginTop: "32px" }}>
       <div className={styles.contact_title_container}>
@@ -28,24 +81,53 @@ function ContactMe() {
         <div className={styles.form_wrapper}>
           <span className={styles.title}>Message me</span>
 
-          <div className={styles.form}>
+          <form
+            ref={form}
+            className={styles.form}
+            onSubmit={(e) => handleSendMessage(e)}
+          >
             <div className={styles.name_container}>
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Email/Phone" />
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                value={message?.name}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="email"
+                placeholder="Email"
+                value={message?.email}
+                onChange={handleChange}
+              />
             </div>
 
             <input
               type="text"
               placeholder="Subject"
+              name="subject"
               className={styles.subject_input}
+              value={message?.subject}
+              onChange={handleChange}
             />
-            <textarea type="text" placeholder="Message" rows={6} />
+            <textarea
+              type="text"
+              placeholder="Message"
+              name="description"
+              value={message?.description}
+              rows={6}
+              onChange={handleChange}
+            />
 
-            <button className={`${styles.send_message} ${styles.type1}`}>
+            <button
+              type="submit"
+              className={`${styles.send_message} ${styles.type1}`}
+            >
               <FaPaperPlane size={15} />
               <span className={styles.btn_txt}>Send message</span>
             </button>
-          </div>
+          </form>
         </div>
 
         <div className={styles.contact_info}>

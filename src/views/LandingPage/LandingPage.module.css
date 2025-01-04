@@ -93,6 +93,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit; /* Ensure the color of the icon matches the parent */
+  background-color: transparent;
 }
 
 .social:hover {
