@@ -1,20 +1,12 @@
 import React from "react";
 import styles from "./Resume.module.css";
 import { FaArrowRight } from "react-icons/fa";
-import {
-  CSS,
-  Html,
-  JavaScript,
-  Nextjs,
-  ReactImg,
-  Tailwind,
-} from "../../assets";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import { skills } from "../../data/skills";
 
-function Resume({ ref, handleElementClick }) {
+function Resume() {
   return (
-    <div className={styles.main_container} ref={ref}>
+    <div className={styles.main_container}>
       <div className={styles.resume_title_container}>
         <span className={styles.feel_free_text}>Check out on me</span>
         <span className={styles.resume}>Resume</span>
@@ -126,7 +118,7 @@ function Resume({ ref, handleElementClick }) {
             return (
               <Tooltip tooltipText={skill?.skill} key={index}>
                 <div className={styles.icon_container}>
-                  <img src={skill?.icon} alt="" height={'30px'}/>
+                  <img src={skill?.icon} alt="" height={"30px"} />
                 </div>
               </Tooltip>
             );
