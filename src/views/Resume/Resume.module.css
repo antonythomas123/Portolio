@@ -1,5 +1,5 @@
 .main_container {
-    margin-top: 34px;
+  margin-top: 34px;
 }
 .resume_title_container {
   width: 100%;
@@ -93,12 +93,46 @@
 }
 
 .exp_title {
-    font-size: 14px;
-    font-weight: 500;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .subtitle {
-    font-size: 12px;
+  font-size: 12px;
+}
+
+.skill_sections {
+  width: 50%;
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.icon_container {
+  background-color: #232329;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.icon_container img {
+  transition: filter 0.3s ease-in-out;
+}
+
+.icon_container:hover img {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(444%)
+    hue-rotate(94deg) brightness(102%) contrast(102%);
 }
 
 @media screen and (max-width: 600px) {
@@ -109,6 +143,9 @@
     width: 100%;
   }
   .exp_container {
+    width: 100%;
+  }
+  .skill_sections {
     width: 100%;
   }
 }

@@ -1,6 +1,16 @@
 import React from "react";
 import styles from "./Resume.module.css";
 import { FaArrowRight } from "react-icons/fa";
+import {
+  CSS,
+  Html,
+  JavaScript,
+  Nextjs,
+  ReactImg,
+  Tailwind,
+} from "../../assets";
+import Tooltip from "../../components/Tooltip/Tooltip";
+import { skills } from "../../data/skills";
 
 function Resume({ ref, handleElementClick }) {
   return (
@@ -109,6 +119,18 @@ function Resume({ ref, handleElementClick }) {
       <div className={styles.skill_sections}>
         <div>
           <span className={styles.education_title}>Skills</span>
+        </div>
+
+        <div className={styles.skills}>
+          {skills?.map((skill, index) => {
+            return (
+              <Tooltip tooltipText={skill?.skill} key={index}>
+                <div className={styles.icon_container}>
+                  <img src={skill?.icon} alt="" height={'30px'}/>
+                </div>
+              </Tooltip>
+            );
+          })}
         </div>
       </div>
     </div>
