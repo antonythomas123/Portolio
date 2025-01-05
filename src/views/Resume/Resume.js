@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./Resume.module.css";
 import { FaArrowRight } from "react-icons/fa";
 
-function Resume() {
+function Resume({ ref, handleElementClick }) {
   return (
-    <div className={styles.main_container}>
+    <div className={styles.main_container} ref={ref}>
       <div className={styles.resume_title_container}>
         <span className={styles.feel_free_text}>Check out on me</span>
         <span className={styles.resume}>Resume</span>
@@ -27,7 +27,9 @@ function Resume() {
               <FaArrowRight color="#00ff9b" />
             </div>
             <div className={styles.education_content}>
-              <span className={styles.exp_title}>BTech in Computer Science and Engineering</span>
+              <span className={styles.exp_title}>
+                BTech in Computer Science and Engineering
+              </span>
               <span className={styles.subtitle}>
                 APJ Abdul Kalam Technological University, Kerala / 2019 - 2023
               </span>
@@ -40,7 +42,9 @@ function Resume() {
               <FaArrowRight color="#00ff9b" />
             </div>
             <div className={styles.education_content}>
-              <span className={styles.exp_title}>Higher secondary education</span>
+              <span className={styles.exp_title}>
+                Higher secondary education
+              </span>
               <span className={styles.subtitle}>
                 Directorate of Higher Secondary Education Kerala / 2017-2019
               </span>
@@ -61,7 +65,9 @@ function Resume() {
 
             <div className={styles.education_content}>
               <span className={styles.exp_title}>Technology Associate</span>
-              <span className={styles.subtitle}>Acabes International Pvt Ltd, Kochi, Kerala, India</span>
+              <span className={styles.subtitle}>
+                Acabes International Pvt Ltd, Kochi, Kerala, India
+              </span>
               <span className={styles.subtitle}>July 2023 - Present</span>
               <span className={styles.subtitle}>
                 Designing and developing responsive financial applications using
@@ -79,9 +85,15 @@ function Resume() {
               <FaArrowRight color="#00ff9b" />
             </div>
             <div className={styles.education_content}>
-              <span className={styles.exp_title}>Software developer intern</span>
-              <span className={styles.subtitle}>Edgaadi Pvt Ltd, Kochi, Kerala, India</span>
-              <span className={styles.subtitle}>October 2022 - December 2022</span>
+              <span className={styles.exp_title}>
+                Software developer intern
+              </span>
+              <span className={styles.subtitle}>
+                Edgaadi Pvt Ltd, Kochi, Kerala, India
+              </span>
+              <span className={styles.subtitle}>
+                October 2022 - December 2022
+              </span>
               <span className={styles.subtitle}>
                 Developed a cross-platform mobile app for SAP management using
                 React Native, React Redux, TypeScript, and GraphQL, streamlining

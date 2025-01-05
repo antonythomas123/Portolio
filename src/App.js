@@ -11,9 +11,15 @@ function App() {
     <div className="app_container">
       <Navbar />
       <ToastProvider>
-        <LandingPage />
-        <Resume />
-        <ContactMe />
+        <div id="home">
+          <LandingPage />
+        </div>
+        <div id="resume">
+          <Resume />
+        </div>
+        <div id="contactme">
+          <ContactMe />
+        </div>
 
         <ToastContainer />
       </ToastProvider>
