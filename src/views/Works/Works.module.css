@@ -49,3 +49,9 @@
   background-color: #00ff9b;
   border-radius: 4px;
 }
+
+.works_container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}

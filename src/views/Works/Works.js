@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Works.module.css";
 import Card from "../../components/Card/Card";
+import { works } from "../../data/works";
 
 function Works() {
   return (
@@ -20,7 +21,17 @@ function Works() {
       </div>
 
       <div className={styles.works_container}>
-        <Card />
+        {works.map((work, index) => {
+          return (
+            <Card
+              key={index}
+              title={work.title}
+              image={work.image}
+              hostedLink={work.hostedLink}
+              github={work.github}
+            />
+          );
+        })}
       </div>
     </div>
   );

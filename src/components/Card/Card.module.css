@@ -36,6 +36,7 @@
   justify-content: space-between;
   align-items: flex-end;
   margin: 18px 0px 12px 0px;
+  padding: 0px 12px;
 }
 
 .social {
