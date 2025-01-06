@@ -5,6 +5,7 @@ import { ToastProvider } from "./providers/ToastProvider";
 import ContactMe from "./views/ContactMe/ContactMe";
 import LandingPage from "./views/LandingPage/LandingPage";
 import Resume from "./views/Resume/Resume";
+import Works from "./views/Works/Works";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </div>
         <div id="resume">
           <Resume />
+        </div>
+        <div id="works">
+          <Works />
         </div>
         <div id="contactme">
           <ContactMe />

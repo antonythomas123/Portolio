@@ -29,7 +29,7 @@ function Navbar() {
         <span className={styles.nav} onClick={() => scrollToSection("resume")}>
           Resume
         </span>
-        <span className={styles.nav} onClick={() => scrollToSection("work")}>
+        <span className={styles.nav} onClick={() => scrollToSection("works")}>
           Work
         </span>
         <span
