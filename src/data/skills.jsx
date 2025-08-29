@@ -14,42 +14,42 @@ import { SiRedux } from "react-icons/si";
 export const skills = [
   {
     skill: "html",
-    icon: <RiHtml5Line className="size-15"/>,
+    icon: <RiHtml5Line className="size-10"/>,
   },
   {
     skill: "css",
-    icon: <RiCss3Line className="size-15"/>,
+    icon: <RiCss3Line className="size-10"/>,
   },
   {
     skill: "javascript",
-    icon: <RiJavascriptLine className="size-15"/>,
+    icon: <RiJavascriptLine className="size-10"/>,
   },
   {
     skill: "react",
-    icon: <RiReactjsLine className="size-15"/>,
+    icon: <RiReactjsLine className="size-10"/>,
   },
   {
     skill: "next js",
-    icon: <RiNextjsLine className="size-15"/>,
+    icon: <RiNextjsLine className="size-10"/>,
   },
   {
     skill: "tailwind",
-    icon: <RiTailwindCssLine className="size-15"/>,
+    icon: <RiTailwindCssLine className="size-10"/>,
   },
   {
     skill: "redux",
-    icon: <SiRedux className="size-15"/>,
+    icon: <SiRedux className="size-10"/>,
   },
   {
     skill: "node",
-    icon: <RiNodejsLine className="size-15"/>,
+    icon: <RiNodejsLine className="size-10"/>,
   },
   {
     skill: "graphql",
-    icon: <GrGraphQl className="size-15"/>,
+    icon: <GrGraphQl className="size-10"/>,
   },
   {
     skill: "mongo",
-    icon: <DiMongodb className="size-15"/>,
+    icon: <DiMongodb className="size-10"/>,
   },
 ];

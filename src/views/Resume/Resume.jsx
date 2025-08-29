@@ -133,19 +133,19 @@ function Resume() {
               </ul>
 
               <div className="flex gap-4 flex-wrap">
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   React JS
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   Javascript
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   React Redux
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   CSS
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   Material UI
                 </span>
               </div>
@@ -175,22 +175,22 @@ function Resume() {
               </ul>
 
               <div className="flex gap-4 flex-wrap">
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   TypeScript
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   React JS
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   React Native
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   React Redux
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   GraphQL
                 </span>
-                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1 text-[12px]">
                   Apollo Client
                 </span>
               </div>
@@ -209,7 +209,7 @@ function Resume() {
           <span className={styles.education_title}>Skills</span>
         </div> */}
 
-        <div>
+        <div className="mt-24">
           <p className="text-[#00ff9b] text-[18px] font-bold tracking-widest">
             Technical Skills
           </p>

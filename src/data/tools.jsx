@@ -5,22 +5,22 @@ import { VscVscode } from "react-icons/vsc";
 export const tools = [
   {
     tool: "vscode",
-    icon: <VscVscode className="size-15" />,
+    icon: <VscVscode className="size-10" />,
   },
   {
     tool: "postman",
-    icon: <SiPostman className="size-15" />,
+    icon: <SiPostman className="size-10" />,
   },
   {
     tool: "figma",
-    icon: <FaFigma className="size-15" />,
+    icon: <FaFigma className="size-10" />,
   },
   {
     tool: "jira",
-    icon: <FaJira className="size-15" />,
+    icon: <FaJira className="size-10" />,
   },
   {
     tool: "confluence",
-    icon: <FaConfluence className="size-15" />,
+    icon: <FaConfluence className="size-10" />,
   },
 ];

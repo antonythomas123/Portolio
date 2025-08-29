@@ -181,7 +181,7 @@ function ContactMe() {
             </div>
             <button
               type="submit"
-              className="flex gap-4 border-[#00ff9b] border-2 p-4 rounded-full text-[#00ff9b] cursor-pointer active:bg-[#64ffda33] hover:bg-[#64ffda1a]"
+              className="flex gap-4 items-center border-[#00ff9b] border-2 p-4 rounded-full text-[#00ff9b] cursor-pointer active:bg-[#64ffda33] hover:bg-[#64ffda1a] h-[40px]"
             >
               <FaPaperPlane size={15} />
               <span>Send message</span>

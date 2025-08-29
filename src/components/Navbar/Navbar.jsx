@@ -134,7 +134,7 @@ function Navbar() {
           <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-[#00ff9b]">
             <Bars3Icon
               aria-hidden="true"
-              className="block size-10 group-data-open:hidden"
+              className="block size-6 group-data-open:hidden"
             />
           </DisclosureButton>
         </div>
