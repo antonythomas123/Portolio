@@ -159,7 +159,7 @@ function LandingPage() {
               ease: "easeInOut",
             }}
           >
-            <ArrowLongDownIcon className="size-8" />
+            <ArrowLongDownIcon className="size-6" />
           </motion.div>
         </div>
       </div>

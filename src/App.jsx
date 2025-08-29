@@ -23,13 +23,13 @@ function App() {
           <section id="home">
             <LandingPage />
           </section>
-          <section id="resume">
+          <section id="resume" className="mt-30">
             <Resume />
           </section>
-          <section id="works">
+          <section id="works" className="mt-30">
             <Works />
           </section>
-          <section id="contactme">
+          <section id="contactme" className="mt-30">
             <ContactMe />
           </section>
         </div>
