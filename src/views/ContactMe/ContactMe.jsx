@@ -22,6 +22,7 @@ function ContactMe() {
     subject: "",
     description: "",
   });
+  const [errors, setErrors] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,13 +36,32 @@ function ContactMe() {
   const handleSendMessage = (e) => {
     e.preventDefault();
 
+    if (
+      !message.name ||
+      !message.email ||
+      !message.subject ||
+      !message.description
+    ) {
+      setErrors((prev) => ({
+        ...prev,
+        name: message?.name ? "" : "Field cannot be empty",
+        email: message?.email ? "" : "Field cannot be empty",
+        subject: message?.subject ? "" : "Field cannot be empty",
+        description: message?.description ? "" : "Field cannot be empty",
+      }));
+
+      return;
+    }
+
+    setErrors(null);
+
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         form.current,
         {
-          publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+          publicKey: import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
         }
       )
       .then(
@@ -101,49 +121,70 @@ function ContactMe() {
 
           <form
             ref={form}
-            className={styles.form}
+            className="flex gap-[12px] flex-col mt-[12px] justify-center items-center md:justify-start md:items-start"
             onSubmit={(e) => handleSendMessage(e)}
           >
-            <div className={styles.name_container}>
-              <input
-                type="text"
-                placeholder="Name"
-                name="name"
-                value={message?.name}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                name="email"
-                placeholder="Email"
-                value={message?.email}
-                onChange={handleChange}
-              />
+            <div className="w-full flex flex-col md:flex-row gap-[12px]">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  value={message?.name}
+                  className={`w-full md:w-1/2 bg-[#9c9c9c60] h-[36px] p-2 rounded ${errors?.name ? "border-red-500" : " border-none"} ${errors?.name ? "border-2" : "border-none"} focus:outline-none`}
+                  onChange={handleChange}
+                />
+                {errors?.name && <p className="text-red-500">{errors?.name}</p>}
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  value={message?.email}
+                  className={`w-full md:w-1/2 bg-[#9c9c9c60] h-[36px] p-2 rounded focus:outline-none ${errors?.email ? "border-red-500" : " border-none"} ${errors?.email ? "border-2" : "border-none"}`}
+                  onChange={handleChange}
+                />
+                {errors?.email && (
+                  <p className="text-red-500">{errors?.email}</p>
+                )}
+              </div>
             </div>
 
-            <input
-              type="text"
-              placeholder="Subject"
-              name="subject"
-              className={styles.subject_input}
-              value={message?.subject}
-              onChange={handleChange}
-            />
-            <textarea
-              type="text"
-              placeholder="Message"
-              name="description"
-              value={message?.description}
-              rows={6}
-              onChange={handleChange}
-            />
+            <div className="w-full">
+              <input
+                type="text"
+                placeholder="Subject"
+                name="subject"
+                className={`w-full bg-[#9c9c9c60] h-[36px] p-2 rounded focus:outline-none ${errors?.subject ? "border-red-500" : " border-none"} ${errors?.subject ? "border-2" : "border-none"}`}
+                value={message?.subject}
+                onChange={handleChange}
+              />
+              {errors?.subject && (
+                <p className="text-red-500">{errors?.subject}</p>
+              )}
+            </div>
 
+            <div className="w-full">
+              <textarea
+                type="text"
+                placeholder="Message"
+                value={message?.description}
+                name="description"
+                className={`w-full bg-[#9c9c9c60] rounded p-2 focus:outline-none ${errors?.description ? "border-red-500" : " border-none"} ${errors?.description ? "border-2" : "border-none"}`}
+                rows={6}
+                onChange={handleChange}
+              />
+              {errors?.description && (
+                <p className="text-red-500">{errors?.description}</p>
+              )}
+            </div>
             <button
               type="submit"
-              className={`${styles.send_message} ${styles.type1}`}
+              className="flex gap-4 border-[#00ff9b] border-2 p-4 rounded-full text-[#00ff9b] cursor-pointer active:bg-[#64ffda33] hover:bg-[#64ffda1a]"
             >
               <FaPaperPlane size={15} />
-              <span className={styles.btn_txt}>Send message</span>
+              <span>Send message</span>
             </button>
           </form>
         </motion.div>
