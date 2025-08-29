@@ -9,8 +9,6 @@ import {
 import { Button } from "@headlessui/react";
 
 function LandingPage() {
-  const [width, setWidth] = useState(window.innerWidth);
-
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = ResumeAntony; // Use the imported PDF as the href
@@ -20,12 +18,6 @@ function LandingPage() {
     document.body.removeChild(link);
   };
 
-  // useEffect(() => {
-  //   const handleResize = () => setWidth(window.innerWidth);
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
-
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -34,7 +26,7 @@ function LandingPage() {
   };
 
   return (
-    <div>
+    <div className="relative">
       <div className="flex flex-col-reverse items-center md:flex-row h-full md:h-screen flex-1">
         <div className="flex flex-col gap-6 md:w-1/2 w-full items-center md:items-start">
           <div className="tracking-widest flex flex-col gap-2 text-center md:text-left">
@@ -119,10 +111,10 @@ function LandingPage() {
             alt=""
           />
         </div>
-      </div>
 
-      <div className="w-full flex items-center justify-center mt-10">
-        <ArrowLongDownIcon className="size-8" />
+        <div className="absolute bottom-[-40px] md:bottom-40 w-full flex items-center justify-center mt-10">
+          <ArrowLongDownIcon className="size-8" />
+        </div>
       </div>
     </div>
   );
