@@ -20,18 +20,18 @@ function App() {
       <Navbar />
       <ToastProvider>
         <div className="p-12">
-          <div id="home">
+          <section id="home">
             <LandingPage />
-          </div>
-          <div id="resume">
+          </section>
+          <section id="resume">
             <Resume />
-          </div>
-          <div id="works">
+          </section>
+          <section id="works">
             <Works />
-          </div>
-          <div id="contactme">
+          </section>
+          <section id="contactme">
             <ContactMe />
-          </div>
+          </section>
         </div>
         <ToastContainer />
       </ToastProvider>

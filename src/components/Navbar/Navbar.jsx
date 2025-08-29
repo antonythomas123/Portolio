@@ -92,7 +92,7 @@ function Navbar() {
           <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-[#00ff9b]">
             <Bars3Icon
               aria-hidden="true"
-              className="block size-6 group-data-open:hidden"
+              className="block size-10 group-data-open:hidden"
             />
           </DisclosureButton>
         </div>
@@ -105,7 +105,7 @@ function Navbar() {
         leaveFrom="opacity-100 translate-x-0"
         leaveTo="opacity-0 translate-x-full"
       >
-        <DisclosurePanel className="sm:hidden fixed inset-y-0 right-0 w-2/3 max-w-3/4 bg-[#020617] flex flex-col items-center justify-center gap-6 text-white z-50">
+        <DisclosurePanel className="sm:hidden fixed inset-y-0 right-0 w-2/3 max-w-3/4 bg-[#121212] flex flex-col items-center justify-center gap-6 text-white z-50">
           <DisclosureButton className="absolute top-5 right-5 rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-[#00ff9b]">
             <XMarkIcon className="size-8" />
           </DisclosureButton>
