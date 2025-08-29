@@ -3,13 +3,41 @@ import styles from "./Resume.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import { skills } from "../../data/skills";
+import { motion } from "motion/react";
+
+const iconVariants = (duration) => ({
+  initial: { y: -10 },
+  animate: {
+    y: [10, -10],
+    transition: {
+      duration: duration,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "reverse",
+    },
+  },
+});
 
 function Resume() {
   return (
     <div className={styles.main_container}>
       <div className={styles.resume_title_container}>
-        <span className={styles.feel_free_text}>Check out on me</span>
-        <span className={styles.resume}>Resume</span>
+        <motion.span
+          whileInView={{ opacity: 1, y: 0 }}
+          className={styles.feel_free_text}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1.5 }}
+        >
+          Check out on me
+        </motion.span>
+        <motion.span
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1.5 }}
+          className={styles.resume}
+        >
+          Resume
+        </motion.span>
 
         <div className={styles.underline_container}>
           <span className={styles.underline_one}></span>
@@ -19,7 +47,12 @@ function Resume() {
       </div>
 
       <div className={styles.resume_container}>
-        <div className={styles.education_container}>
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1.5 }}
+          className={styles.education_container}
+        >
           <div className={styles.edu_title}>
             <span className={styles.education_title}>Education</span>
           </div>
@@ -53,9 +86,14 @@ function Resume() {
               <span className={styles.subtitle}>Percentage: 78%</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className={styles.exp_container}>
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          transition={{ duration: 1.5 }}
+          className={styles.exp_container}
+        >
           <div className={styles.edu_title}>
             <span className={styles.education_title}>My experiences</span>
           </div>
@@ -105,10 +143,15 @@ function Resume() {
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className={styles.skill_sections}>
+      <motion.div
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 1.5 }}
+        className={styles.skill_sections}
+      >
         <div>
           <span className={styles.education_title}>Skills</span>
         </div>
@@ -117,14 +160,20 @@ function Resume() {
           {skills?.map((skill, index) => {
             return (
               <Tooltip tooltipText={skill?.skill} key={index}>
-                <div className={styles.icon_container}>
-                  <img src={skill?.icon} alt="" height={"30px"} />
-                </div>
+                <motion.div className={styles.icon_container}>
+                  <motion.span
+                    initial="initial"
+                    animate="animate"
+                    variants={iconVariants(index + 1)}
+                  >
+                    {skill?.icon}
+                  </motion.span>
+                </motion.div>
               </Tooltip>
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -13,6 +13,24 @@ import {
   BriefcaseIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
+import { motion } from "motion/react";
+
+const containerVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 const Nav = ({ name, onClick, icon }) => {
   return (
@@ -68,13 +86,18 @@ function Navbar() {
       as="nav"
       className="relative after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px"
     >
-      <div className="relative flex text-[#FFFFFF] h-[70px] items-center justify-between px-10">
-        <div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="relative flex text-[#FFFFFF] h-[70px] items-center justify-between px-10"
+      >
+        <motion.div variants={childVariants}>
           <span className="text-3xl tracking-widest">Antony</span>
           <span className="text-[4rem] text-[#00ff9b]">.</span>
-        </div>
+        </motion.div>
         <div className="hidden sm:ml-6 sm:block">
-          <div className="flex gap-6 text-[14px] items-end tracking-widest">
+          <motion.div variants={childVariants} className="flex gap-6 text-[14px] items-end tracking-widest">
             {navigations?.map((item) => {
               return (
                 <Nav
@@ -85,7 +108,7 @@ function Navbar() {
                 />
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
         <div className="absolute inset-y-0 right-5 flex items-center sm:hidden">
@@ -96,7 +119,7 @@ function Navbar() {
             />
           </DisclosureButton>
         </div>
-      </div>
+      </motion.div>
       <Transition
         enter="transition ease-out duration-300"
         enterFrom="opacity-0 translate-x-full"

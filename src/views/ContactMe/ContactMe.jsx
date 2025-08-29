@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { useToast } from "../../providers/ToastProvider";
+import { motion } from "motion/react";
 
 function ContactMe() {
   const form = useRef();
@@ -65,10 +66,22 @@ function ContactMe() {
   return (
     <div style={{ marginTop: "32px" }}>
       <div className={styles.contact_title_container}>
-        <span className={styles.feel_free_text}>
+        <motion.span
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1.5 }}
+          className={styles.feel_free_text}
+        >
           Feel free to contact me anytime
-        </span>
-        <span className={styles.get_in_touch}>Get in touch</span>
+        </motion.span>
+        <motion.span
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 1.5 }}
+          className={styles.get_in_touch}
+        >
+          Get in touch
+        </motion.span>
 
         <div className={styles.underline_container}>
           <span className={styles.underline_one}></span>
@@ -78,7 +91,12 @@ function ContactMe() {
       </div>
 
       <div className={styles.main_container}>
-        <div className={styles.form_wrapper}>
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1.5 }}
+          className={styles.form_wrapper}
+        >
           <span className={styles.title}>Message me</span>
 
           <form
@@ -128,9 +146,14 @@ function ContactMe() {
               <span className={styles.btn_txt}>Send message</span>
             </button>
           </form>
-        </div>
+        </motion.div>
 
-        <div className={styles.contact_info}>
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          transition={{ duration: 1.5 }}
+          className={styles.contact_info}
+        >
           <span className={styles.title}>Contact info</span>
 
           <span>
@@ -171,7 +194,7 @@ function ContactMe() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -6,7 +6,25 @@ import {
   ArrowLongDownIcon,
   ArrowLongRightIcon,
 } from "@heroicons/react/24/outline";
-import { Button } from "@headlessui/react";
+import { motion } from "motion/react";
+
+const containerVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.5,
+      // delay: 1,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 function LandingPage() {
   const handleDownload = () => {
@@ -28,14 +46,28 @@ function LandingPage() {
   return (
     <div className="relative">
       <div className="flex flex-col-reverse items-center md:flex-row h-full md:h-screen flex-1">
-        <div className="flex flex-col gap-6 md:w-1/2 w-full items-center md:items-start">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="flex flex-col gap-6 md:w-1/2 w-full items-center md:items-start"
+        >
           <div className="tracking-widest flex flex-col gap-2 text-center md:text-left">
-            <h3 className="text-3xl">hi,</h3>
-            <h3 className="text-3xl">I am</h3>
-            <h1 className="text-[32px] font-normal">Antony Thomas</h1>
+            <motion.h3 variants={childVariants} className="text-3xl">
+              hi,
+            </motion.h3>
+            <motion.h3 variants={childVariants} className="text-3xl">
+              I am
+            </motion.h3>
+            <motion.h1
+              variants={childVariants}
+              className="text-[32px] font-normal"
+            >
+              Antony Thomas
+            </motion.h1>
           </div>
           <div className="flex flex-col gap-4 text-center md:text-left">
-            <span className="text-1xl">
+            <motion.span variants={childVariants} className="text-1xl">
               I am a&nbsp;
               <span className="text-[#00ff9b] font-bold font-mono text-[16px]">
                 <Typewriter
@@ -52,68 +84,91 @@ function LandingPage() {
                   delaySpeed={1000}
                 />
               </span>
-            </span>
+            </motion.span>
 
-            <p className="text-[#a8b2d1] text-[14px] tracking-widest">
+            <motion.p
+              variants={childVariants}
+              className="text-[#a8b2d1] text-[14px] tracking-widest"
+            >
               Software engineer with 2 years of experience specializing in
               React.js, Next.js, and Node.js. Passionate about building
               performant and user-friendly web applications with clean code
               practices.
-            </p>
+            </motion.p>
           </div>
 
           <div className="flex w-full gap-8 items-center justify-center md:justify-start">
-            <Button
-              className="border-[#00ff9b] border-[2px] rounded-full p-3 cursor-pointer data-active:bg-[#64ffda33] data-hover:bg-[#64ffda1a]"
+            <motion.button
+              variants={childVariants}
+              className="border-[#00ff9b] border-[2px] rounded-full p-3 cursor-pointer active:bg-[#64ffda33] hover:bg-[#64ffda1a]"
               onClick={() => scrollToSection("contactme")}
             >
               Get in touch
-            </Button>
+            </motion.button>
 
-            <Button
-              className="group border-none bg-none flex gap-2 items-center cursor-pointer data-hover:text-[#00ff9b]"
+            <motion.button
+              variants={childVariants}
+              className="group border-none bg-none flex gap-2 items-center cursor-pointer hover:text-[#00ff9b]"
               onClick={() => scrollToSection("works")}
             >
               View my work{" "}
               <ArrowLongRightIcon className="size-6 transform transition-transform duration-300 group-hover:translate-x-2" />
-            </Button>
+            </motion.button>
           </div>
 
           <div className="flex gap-4">
-            <a
+            <motion.a
+              variants={childVariants}
               href="https://github.com/antonythomas123"
               target="_blank"
               rel="noreferrer"
             >
               <FaGithub className="size-8" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              variants={childVariants}
               href="https://www.linkedin.com/in/antony-thomas123"
               target="_blank"
               rel="noreferrer"
             >
               <FaLinkedin className="size-8" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              variants={childVariants}
               href="https://www.instagram.com/anto_ny_thom_as/"
               target="_blank"
               rel="noreferrer"
             >
               <FaInstagram className="size-8" />
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
 
         <div className="flex justify-center w-full md:w-1/2 mb-6 md:mb-0">
-          <img
+          <motion.img
             className="h-[300px] w-[300px] rounded-full object-cover border-3 border-[#00ff9b]"
             src={HomeImg}
             alt=""
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
           />
         </div>
 
         <div className="absolute bottom-[-40px] md:bottom-40 w-full flex items-center justify-center mt-10">
-          <ArrowLongDownIcon className="size-8" />
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+              opacity: [1, 0.6, 1],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <ArrowLongDownIcon className="size-8" />
+          </motion.div>
         </div>
       </div>
     </div>
