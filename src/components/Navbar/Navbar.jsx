@@ -14,6 +14,7 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "motion/react";
+import { ResumeAntony } from "../../assets";
 
 const containerVariants = {
   hidden: { opacity: 0, x: -100 },
@@ -74,6 +75,15 @@ function Navbar() {
     },
   ];
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = ResumeAntony;
+    link.download = "Antony_Thomas.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -97,7 +107,10 @@ function Navbar() {
           <span className="text-[4rem] text-[#00ff9b]">.</span>
         </motion.div>
         <div className="hidden sm:ml-6 sm:block">
-          <motion.div variants={childVariants} className="flex gap-6 text-[14px] items-end tracking-widest">
+          <motion.div
+            variants={childVariants}
+            className="flex gap-6 text-[14px] items-center tracking-widest"
+          >
             {navigations?.map((item) => {
               return (
                 <Nav
@@ -108,6 +121,12 @@ function Navbar() {
                 />
               );
             })}
+            <a
+              onClick={() => handleDownload()}
+              className="border-[#00ff9b] border-2 rounded text-[12px] font-normal p-2 cursor-pointer active:bg-[#64ffda33] hover:bg-[#64ffda1a]"
+            >
+              Resume
+            </a>
           </motion.div>
         </div>
 
@@ -146,6 +165,13 @@ function Navbar() {
                 </DisclosureButton>
               );
             })}
+
+            <a
+              onClick={() => handleDownload()}
+              className="border-[#00ff9b] border-2 rounded text-[12px] font-normal p-2 cursor-pointer active:bg-[#64ffda33] hover:bg-[#64ffda1a]"
+            >
+              Resume
+            </a>
           </div>
         </DisclosurePanel>
       </Transition>

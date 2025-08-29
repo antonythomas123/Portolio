@@ -124,25 +124,25 @@ function ContactMe() {
             className="flex gap-[12px] flex-col mt-[12px] justify-center items-center md:justify-start md:items-start"
             onSubmit={(e) => handleSendMessage(e)}
           >
-            <div className="w-full flex flex-col md:flex-row gap-[12px]">
-              <div>
+            <div className="flex flex-col w-full md:flex-row gap-[12px]">
+              <div className="flex flex-col w-full md:w-1/2">
                 <input
                   type="text"
                   placeholder="Name"
                   name="name"
                   value={message?.name}
-                  className={`w-full md:w-1/2 bg-[#9c9c9c60] h-[36px] p-2 rounded ${errors?.name ? "border-red-500" : " border-none"} ${errors?.name ? "border-2" : "border-none"} focus:outline-none`}
+                  className={`bg-[#9c9c9c60] h-[36px] p-2 rounded ${errors?.name ? "border-red-500" : " border-none"} ${errors?.name ? "border-2" : "border-none"} focus:outline-none`}
                   onChange={handleChange}
                 />
                 {errors?.name && <p className="text-red-500">{errors?.name}</p>}
               </div>
-              <div>
+              <div className="flex flex-col w-full md:w-1/2 ">
                 <input
                   type="text"
                   name="email"
                   placeholder="Email"
                   value={message?.email}
-                  className={`w-full md:w-1/2 bg-[#9c9c9c60] h-[36px] p-2 rounded focus:outline-none ${errors?.email ? "border-red-500" : " border-none"} ${errors?.email ? "border-2" : "border-none"}`}
+                  className={`bg-[#9c9c9c60] h-[36px] p-2 rounded focus:outline-none ${errors?.email ? "border-red-500" : " border-none"} ${errors?.email ? "border-2" : "border-none"}`}
                   onChange={handleChange}
                 />
                 {errors?.email && (
@@ -207,7 +207,7 @@ function ContactMe() {
               <FaUser size={20} color="#00ff9b" />
               <div className={styles.information}>
                 <span>Name</span>
-                <span>Antony Thomas</span>
+                <span className="text-[#a8b2d1]">Antony Thomas</span>
               </div>
             </div>
 
@@ -215,7 +215,7 @@ function ContactMe() {
               <FaLocationDot size={20} color="#00ff9b" />
               <div className={styles.information}>
                 <span>Location</span>
-                <span>Kochi, Kerala, India, 682 042</span>
+                <span className="text-[#a8b2d1]">Kochi, Kerala, India, 682 042</span>
               </div>
             </div>
 
@@ -223,7 +223,7 @@ function ContactMe() {
               <FaMobile size={20} color="#00ff9b" />
               <div className={styles.information}>
                 <span>Call me</span>
-                <span>+91 6238785393</span>
+                <span className="text-[#a8b2d1]">+91 6238785393</span>
               </div>
             </div>
 
@@ -231,7 +231,7 @@ function ContactMe() {
               <FaEnvelope size={20} color="#00ff9b" />
               <div className={styles.information}>
                 <span>Email</span>
-                <span>antonythomas993@gmail.com</span>
+                <span className="text-[#a8b2d1]">antonythomas993@gmail.com</span>
               </div>
             </div>
           </div>

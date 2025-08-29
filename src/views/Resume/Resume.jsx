@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import { skills } from "../../data/skills";
 import { motion } from "motion/react";
+import { tools } from "../../data/tools";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -109,14 +110,45 @@ function Resume() {
                 Acabes International Pvt Ltd, Kochi, Kerala, India
               </span>
               <span className={styles.subtitle}>July 2023 - Present</span>
-              <span className={styles.subtitle}>
-                Designing and developing responsive financial applications using
-                React.js, CSS, and JavaScript to enhance user experience and
-                performance. I focus on optimizing complex transaction modules,
-                integrating RESTful APIs for real-time updates, and
-                collaborating with cross-functional teams to deliver scalable,
-                high-quality solutions
-              </span>
+              <ul className="text-[12px] list-disc text-[#a8b2d1]">
+                <li>
+                  Developed and maintained reponsive financial web applications
+                  using React JS
+                </li>
+                <li>
+                  Implemented state management solutions using Redux and Context
+                  API
+                </li>
+                <li>
+                  Collaborated with design, backend teams and other stakeholders
+                  to deliver high quality performant solutions
+                </li>
+                <li>
+                  Optimized application performance and ensured cross-browser
+                  compatibility
+                </li>
+                <li>
+                  Participated in code reviews and mentored junior developers
+                </li>
+              </ul>
+
+              <div className="flex gap-4 flex-wrap">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  React JS
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  Javascript
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  React Redux
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  CSS
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  Material UI
+                </span>
+              </div>
             </div>
           </div>
 
@@ -134,13 +166,34 @@ function Resume() {
               <span className={styles.subtitle}>
                 October 2022 - December 2022
               </span>
-              <span className={styles.subtitle}>
-                Developed a cross-platform mobile app for SAP management using
-                React Native, React Redux, TypeScript, and GraphQL, streamlining
-                logistics and improving operational transparency. By
-                implementing real-time tracking, I reduced delivery delays by
-                20%, enhancing efficiency and user experience.
-              </span>
+              <ul className="text-[12px] list-disc text-[#a8b2d1]">
+                <li>
+                  Developed a cross-platform mobile app for SAP management using
+                  React Native
+                </li>
+                <li>Implemented state management solutions using Redux</li>
+              </ul>
+
+              <div className="flex gap-4 flex-wrap">
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  TypeScript
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  React JS
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  React Native
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  React Redux
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  GraphQL
+                </span>
+                <span className="bg-[#64ffda1a] rounded-full text-[#00ff9b] px-4 py-1">
+                  Apollo Client
+                </span>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -152,8 +205,14 @@ function Resume() {
         transition={{ duration: 1.5 }}
         className={styles.skill_sections}
       >
-        <div>
+        {/* <div>
           <span className={styles.education_title}>Skills</span>
+        </div> */}
+
+        <div>
+          <p className="text-[#00ff9b] text-[18px] font-bold tracking-widest">
+            Technical Skills
+          </p>
         </div>
 
         <div className={styles.skills}>
@@ -173,9 +232,42 @@ function Resume() {
             );
           })}
         </div>
+
+        <div className="mt-12">
+          <p className="text-[#00ff9b] text-[18px] font-bold tracking-widest">
+            Tools & Platforms
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-4 mt-4">
+          {tools?.map((skill, index) => {
+            return (
+              <Tooltip tooltipText={skill?.tool} key={index}>
+                <motion.div className={styles.icon_container}>
+                  <motion.span
+                    initial="initial"
+                    animate="animate"
+                    variants={iconVariants(index + 1)}
+                  >
+                    {skill?.icon}
+                  </motion.span>
+                </motion.div>
+              </Tooltip>
+            );
+          })}
+        </div>
       </motion.div>
     </div>
   );
 }
 
 export default Resume;
+
+{
+  /* Designing and developing responsive financial applications using
+                React.js, CSS, and JavaScript to enhance user experience and
+                performance. I focus on optimizing complex transaction modules,
+                integrating RESTful APIs for real-time updates, and
+                collaborating with cross-functional teams to deliver scalable,
+                high-quality solutions */
+}

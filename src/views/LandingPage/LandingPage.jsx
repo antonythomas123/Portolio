@@ -27,14 +27,6 @@ const childVariants = {
 };
 
 function LandingPage() {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = ResumeAntony; // Use the imported PDF as the href
-    link.download = "Antony_Thomas.pdf"; // The name for the downloaded file
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);

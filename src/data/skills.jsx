@@ -1,3 +1,5 @@
+import { DiMongodb } from "react-icons/di";
+import { GrGraphQl } from "react-icons/gr";
 import {
   RiCss3Line,
   RiHtml5Line,
@@ -7,6 +9,7 @@ import {
   RiReactjsLine,
   RiTailwindCssLine,
 } from "react-icons/ri";
+import { SiRedux } from "react-icons/si";
 
 export const skills = [
   {
@@ -34,7 +37,19 @@ export const skills = [
     icon: <RiTailwindCssLine className="size-15"/>,
   },
   {
+    skill: "redux",
+    icon: <SiRedux className="size-15"/>,
+  },
+  {
     skill: "node",
     icon: <RiNodejsLine className="size-15"/>,
+  },
+  {
+    skill: "graphql",
+    icon: <GrGraphQl className="size-15"/>,
+  },
+  {
+    skill: "mongo",
+    icon: <DiMongodb className="size-15"/>,
   },
 ];
