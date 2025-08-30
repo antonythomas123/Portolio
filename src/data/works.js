@@ -10,7 +10,7 @@ export const works = [
   {
     title: "Portfolio",
     image: Portfolio,
-    hostedLink: 'https://portolio-seven.vercel.app/',
+    hostedLink: 'https://portolio-v2-gilt.vercel.app/',
     github: 'https://github.com/antonythomas123/Portolio'
   }
 ];
