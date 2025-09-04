@@ -47,6 +47,7 @@ function Works() {
               image={work.image}
               hostedLink={work.hostedLink}
               github={work.github}
+              tech={work.tech}
             />
           );
         })}
