@@ -79,7 +79,7 @@
   border-radius: 8px;
   background-color: #9c9c9c60;
   color: #fff;
-  font-family: "JetBrains Mono", monospace;
+  /* font-family: "JetBrains Mono", monospace; */
 }
 
 .contact_info {
