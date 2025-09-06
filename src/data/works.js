@@ -1,4 +1,4 @@
-import { LaunchLane, Portfolio, Ecom } from "../assets";
+import { LaunchLane, Portfolio, Ecom, ChatApp } from "../assets";
 
 export const works = [
   {
@@ -21,5 +21,12 @@ export const works = [
     hostedLink: 'https://portolio-v2-gilt.vercel.app/',
     github: 'https://github.com/antonythomas123/Portolio',
     tech: ["React JS", "Javascript", "CSS", "Tailwind CSS", "Framer motion"]
+  },
+  {
+    title: "Chat App",
+    image: ChatApp,
+    hostedLink: '',
+    github: 'https://github.com/antonythomas123/realtime_chat_app',
+    tech: ["React JS", "Javascript", "CSS", "Socket.io", "Material UI", "Node JS", "Mongo DB", "Express JS"]
   }
 ];
