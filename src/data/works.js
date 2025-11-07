@@ -1,6 +1,13 @@
-import { LaunchLane, Portfolio, Ecom, ChatApp } from "../assets";
+import { LaunchLane, Portfolio, Ecom, ChatApp, Resumey } from "../assets";
 
 export const works = [
+  {
+    title: 'Resumey.io',
+    image: Resumey,
+    hostedLink: 'https://resumeyio.netlify.app/',
+    github: 'https://github.com/antonythomas123/ai-resume-analyzer',
+    tech: ["React JS", "Typescript", "Tailwind CSS", "Puter JS"]
+  },
   {
     title: "E-Commerce app",
     image: Ecom,
